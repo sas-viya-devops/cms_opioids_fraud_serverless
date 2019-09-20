@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title>AcceptanceNOW - Lease Program application</title>
+        <title>SAS app for Medicare</title>
         <!-- Meta tags -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=0.7, shrink-to-fit=no">
     
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
@@ -12,7 +12,7 @@
         <!-- Google Fonts, Font Awesome -->
         <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Montserrat+Subrayada" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-		<link rel="stylesheet" src= "./Code/style.css">
+		<link rel="stylesheet" href= "/css/style.css">
     
          <!-- jQuery, Firebase -->
         <script src="https://code.jquery.com/jquery.js"></script>
@@ -24,405 +24,131 @@
 
 
     </head>
+
+
     <body>
-	
-	<div class="background-image">
-		
-	
-        <div class="container">
-		<link rel="stylesheet" src= "static/templates/css/style.css">
-
-            <!-- Logo -->
-            <div >
-                <h1 class="logo" style="color:orangered;" >Welcome to Loan Check !</h1>  
-              <div>
-                <p style="color:orangered;"> <strong>We are happy to help you explore credit options. </strong></p>
-                  <hr>
-                    <p style="color:orangered;"> <strong> Please provide some details to get started. </strong></p>
-                  <hr>
-                <hr>
-              </div>
-            </div>
-        
-            <div class="row">
-              <div class="col-lg-6">
-                <!-- Login Card  -->
-                <div class="card mb-4 p-4">
-                    <h2 class="card-title">Please provide some details:</h2>
-                    <!-- Find Group Form -->
-                    <div class="row">
-                        <div class="col-md-12">
-							<label for="clage"><strong>Age of Oldest Trade Line (months) </strong></label>
-						</div>
-						<div class="col-md-12">
-							<style>
-								.slidecontainer {
-										width: 100%;
-									}
-								.slider {
-										-webkit-appearance: none;
-										width: 100%;
-										height: 25px;
-										background: #00AADD;
-										border:solid 2px;
-										border-style:solid;
-										border-color:#FFDF00;
-										outline: none;
-										opacity: 0.7;
-										-webkit-transition: .6s;
-										transition: opacity .6s;
-									}
-								.slider:hover {
-										opacity: 1;
-									}
-								.slider::-webkit-slider-thumb {
-										-webkit-appearance: none;
-										appearance: none;
-										width: 25px;
-										height: 25px;
-										background-color: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#FFFFFF;
-										cursor: pointer;
-									}
-								.slider::-moz-range-thumb {
-										width: 25px;
-										height: 25px;
-										background: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#000000;
-										border:thick 2px;
-										border-style:thick;
-										cursor: pointer;
-									}
-							</style>
-							<input  id="clage" suffix="month(s)" type="range" min="0" max="1200" value="180" class="slider inputt">
-						</div>
-						<div class="col-md-12">
-							<div id="clage-text" > months</div>
-						</div>
-					</div>
-					
-
-					<div class="row">
-                        <div class="col-md-12">
-							<label for="debtinc"><strong>Debt to Income Ratio (percentage) </strong></label>
-						</div>
-						<div class="col-md-12">
-							<style>
-								.slidecontainer {
-										width: 100%;
-									}
-								.slider {
-										-webkit-appearance: none;
-										width: 100%;
-										height: 25px;
-										background: #00AADD;
-										border:solid 2px;
-										border-style:solid;
-										border-color:#FFDF00;
-										outline: none;
-										opacity: 0.7;
-										-webkit-transition: .6s;
-										transition: opacity .6s;
-									}
-								.slider:hover {
-										opacity: 1;
-									}
-								.slider::-webkit-slider-thumb {
-										-webkit-appearance: none;
-										appearance: none;
-										width: 25px;
-										height: 25px;
-										background-color: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#FFFFFF;
-										cursor: pointer;
-									}
-								.slider::-moz-range-thumb {
-										width: 25px;
-										height: 25px;
-										background: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#000000;
-										border:thick 2px;
-										border-style:thick;
-										cursor: pointer;
-									}
-							</style>
-							<input  id="debtinc" suffix="percent" type="range" min="0" max="220" value="34" class="slider inputt">
-						</div>
-						<div class="col-md-12">
-							<div id="debtinc-text"> percent</div>
-						</div>
-					</div>
-
-
-					<div class="row">
-                        <div class="col-md-12">
-							<label for="delinq"><strong>Number of delinquent credit lines </strong></label>
-						</div>
-						<div class="col-md-12">
-							<style>
-								.slidecontainer {
-										width: 100%;
-									}
-								.slider {
-										-webkit-appearance: none;
-										width: 100%;
-										height: 25px;
-										background: #00AADD;
-										border:solid 2px;
-										border-style:solid;
-										border-color:#FFDF00;
-										outline: none;
-										opacity: 0.7;
-										-webkit-transition: .6s;
-										transition: opacity .6s;
-									}
-								.slider:hover {
-										opacity: 1;
-									}
-								.slider::-webkit-slider-thumb {
-										-webkit-appearance: none;
-										appearance: none;
-										width: 25px;
-										height: 25px;
-										background-color: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#FFFFFF;
-										cursor: pointer;
-									}
-								.slider::-moz-range-thumb {
-										width: 25px;
-										height: 25px;
-										background: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#000000;
-										border:thick 2px;
-										border-style:thick;
-										cursor: pointer;
-									}
-							</style>
-							<input  id="delinq" suffix="line(s)" type="range" min="0" max="15" value="1" class="slider inputt">
-						</div>
-						<div class="col-md-12">
-							<div id="delinq-text"> line(s)</div>
-						</div>
-					</div>
-
-
-					<div class="row">
-                        <div class="col-md-12">
-							<label for="derog"><strong>Number of major derogatory reports </strong></label>
-						</div>
-						<div class="col-md-12">
-							<style>
-								.slidecontainer {
-										width: 100%;
-									}
-								.slider {
-										-webkit-appearance: none;
-										width: 100%;
-										height: 25px;
-										background: #00AADD;
-										border:solid 2px;
-										border-style:solid;
-										border-color:#FFDF00;
-										outline: none;
-										opacity: 0.7;
-										-webkit-transition: .6s;
-										transition: opacity .6s;
-									}
-								.slider:hover {
-										opacity: 1;
-									}
-								.slider::-webkit-slider-thumb {
-										-webkit-appearance: none;
-										appearance: none;
-										width: 25px;
-										height: 25px;
-										background-color: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#FFFFFF;
-										cursor: pointer;
-									}
-								.slider::-moz-range-thumb {
-										width: 25px;
-										height: 25px;
-										background: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#000000;
-										border:thick 2px;
-										border-style:thick;
-										cursor: pointer;
-									}
-							</style>
-							<input id="derog" suffix="report(s)"  type="range" min="0" max="10" value="0" class="slider inputt">
-						</div>
-						<div class="col-md-12">
-							<div id="derog-text"> report(s)</div>
-						</div>
-					</div>
-
-
-					<div class="row">
-                        <div class="col-md-12">
-							<label for="job"><strong>Job Category </strong></label>
-						</div>
-						<div class="col-md-12">
-							<style>
-								.slidecontainer {
-										width: 100%;
-									}
-								.slider {
-										-webkit-appearance: none;
-										width: 100%;
-										height: 25px;
-										background: #00AADD;
-										border:solid 2px;
-										border-style:solid;
-										border-color:#FFDF00;
-										outline: none;
-										opacity: 0.7;
-										-webkit-transition: .6s;
-										transition: opacity .6s;
-									}
-								.slider:hover {
-										opacity: 1;
-									}
-								.slider::-webkit-slider-thumb {
-										-webkit-appearance: none;
-										appearance: none;
-										width: 25px;
-										height: 25px;
-										background-color: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#FFFFFF;
-										cursor: pointer;
-									}
-								.slider::-moz-range-thumb {
-										width: 25px;
-										height: 25px;
-										background: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#000000;
-										border:thick 2px;
-										border-style:thick;
-										cursor: pointer;
-									}
-							</style>
-							<div id="job" class="btn-group" role="group" aria-label="Button group">
-								<button id="job" type="button" value="Other" suffix=" " class="inputt btn btn-secondary">Other</button>
-								<button id="job" type="button" value="ProfExe" suffix=" " class="inputt btn btn-secondary">ProfExe</button>
-								<button id="job" type="button" value="Office" suffix=" " class="inputt btn btn-secondary">Office</button>
-								<button id="job" type="button" value="Mgr" suffix=" " class="inputt btn btn-secondary">Mgr</button>
-								<button id="job" type="button" value="Self" suffix=" " class="inputt btn btn-secondary">Self</button>
-								<button id="job" type="button" value="Sales" suffix=" " class="inputt btn btn-secondary">Sales</button>
-							  
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div id="job-text"> </div>
-						</div>
-
-						
-
-					</div>
-
-
-					<div class="row">
-                        <div class="col-md-12">
-							<label for="value"><strong>Value of loan requested </strong></label>
-						</div>
-						<div class="col-md-12">
-							<style>
-								.slidecontainer {
-										width: 100%;
-									}
-								.slider {
-										-webkit-appearance: none;
-										width: 100%;
-										height: 25px;
-										background: #00AADD;
-										border:solid 2px;
-										border-style:solid;
-										border-color:#FFDF00;
-										outline: none;
-										opacity: 0.7;
-										-webkit-transition: .6s;
-										transition: opacity .6s;
-									}
-								.slider:hover {
-										opacity: 1;
-									}
-								.slider::-webkit-slider-thumb {
-										-webkit-appearance: none;
-										appearance: none;
-										width: 25px;
-										height: 25px;
-										background-color: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#FFFFFF;
-										cursor: pointer;
-									}
-								.slider::-moz-range-thumb {
-										width: 25px;
-										height: 25px;
-										background: #00FF00;
-										border:solid 4px;
-										border-style:solid;
-										border-color:#000000;
-										border:thick 2px;
-										border-style:thick;
-										cursor: pointer;
-									}
-							</style>
-							<input id="value" suffix="dollars" type="range" min="8000" max="900000" value="60000" class="slider inputt">
-						</div>
-						<div class="col-md-12">
-							<div id="value-text">$ </div>
-						</div>
-					</div>
-
-
-
-
-					<div class="row">
-						<div class="col-md-12">
-							<button class="btn btn-primary float-right" id="submit-btn">Am I eligible?</button>
-						</div>
-					</div>
+        <div class="row">
+            <hr>
+            <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link active text-white" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#">Personal Information</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#">Community</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#" >Get Care</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" >Track Health</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" >Research Health</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#" tabindex="-1" aria-disabled="true">Log Out</a>
+                </li>
+              </ul>
+        <br>
+        <br>
+        <div class="row" style="height:30%;width:100%;">
+            <div class="col" style="width: 4%"></div>
+            <div class="card " style="width: 20%; padding:4%;">
+                <img src="/img/pharmacy.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-dark">Pharmacy</h5>
+                  <p class="card-text text-dark">  Refill your VA prescriptions, track delivery, view a list of your VA medications and other details.  </p>
+                  <a href="#" class="btn btn-primary">Read More</a>
                 </div>
-			</div>
-                 
-            <div class="col-lg-6">
-					<!-- Current List of Applicants-->
-					<div class="card mb-4">
-						<div class="card-body" id="card-body">
-							<h2 class="card-title">The Loan Check decision system says: </h2>
-							<div class="col-md-12" id="LoanCheck">
-						</div>
-					</div>
-				</div>
-			</div>
-		
-                  
-      
-          <script src="/scripts/onloaddisplaypage.js"></script>
-	</div>
-	</div>
-	</div>
+              </div>
+              <div class="col" style="width: 1%"></div>
+              <div class="card" style="width: 20%; padding:4%;">
+                <img src="/img/scenario.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-dark">Scenarios</h5>
+                  <p class="card-text text-dark">  Refill your VA prescriptions, track delivery, view a list of your VA medications and other details.  </p>
+                  <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+              <div class="col" style="width: 1%"></div>
+              <div class="card" style="width: 20%; padding:4%;">
+                <img src="/img/securemessages.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-dark">Messages</h5>
+                  <p class="card-text text-dark">  Refill your VA prescriptions, track delivery, view a list of your VA medications and other details.  </p>
+                  <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+              <div class="col" style="width: 1%"></div>
+              <div class="card" style="width: 20%; padding:4%;">
+                <img src="/img/healthrecords-hOTCOibg.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-dark">Health Records</h5>
+                  <p class="card-text text-dark">  Refill your VA prescriptions, track delivery, view a list of your VA medications and other details.  </p>
+                  <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+              <div class="col" style="width: 4%"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="padding:4%;">
+            You are logged in as : 
+        </div>
+        </div>
+        <div class="row">
+                <div class="col-md-12" style="padding:4%;">
+
+                <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#">County Risk</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Provider Risk</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Beneficiary Risk</a>
+                        </li>
+                        
+                      </ul>
+                </div>
+                <div class="col-md-12" style="padding:4%;">
+                        <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">Physically Unhealthy Days</span>
+                                </div>
+                                <textarea class="form-control" aria-label="With textarea" id = "phyDays"></textarea>
+                                <div class="input-group-prepend">
+                                        <span class="input-group-text">Percentage of Adults who are bachelors </span>
+                                </div>
+                                <textarea class="form-control" aria-label="With textarea" id="perBach"></textarea>
+                                <div class="input-group-prepend" >
+                                    <span class="input-group-text">Unemployment Rate</span>
+                                </div>
+                                <textarea class="form-control" aria-label="With textarea" id="unEmpRate" ></textarea>
+                                <div class="input-group-prepend" >
+                                    <span class="input-group-text">Median Household Income</span>
+                                </div>
+                                <textarea class="form-control" aria-label="With textarea" id="medHHIncome"> </textarea>
+                              
+
+                        </div>
+
+                        <button class="btn btn-primary" id="modelSubmit">
+                            Submit
+                        </button>
+                </div>
+        </div>
+        <div class="col-md-12" style="padding:4%;">
+            Resources           
+        </div>
+        </div>
+
+        <script src="/js/index.js"></script>
+
     </body>
-</html>
+
+    </html>
