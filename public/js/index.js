@@ -61,6 +61,7 @@ function makeCall(endpoint,inputO){
   $.ajax(settings).done(function (response) {
                                           console.log("response");
                                           console.log(response);
+                                          
     	
                                               }).error(function(err){ console.log("Error");
                                                                       console.log(err);
