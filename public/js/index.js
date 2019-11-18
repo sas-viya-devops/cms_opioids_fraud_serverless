@@ -35,7 +35,7 @@ while(match = regex.exec(searchstr)) {
 console.log("Access Token details");
 console.log(params);
 
-function makeCall(endpoint,inputO){
+function makeCall(inputO){
 
     var inputData = JSON.stringify(inputO);
 
@@ -61,35 +61,37 @@ function makeCall(endpoint,inputO){
   $.ajax(settings).done(function (response) {
                                           console.log("response");
                                           console.log(response);
-                                          
-    	
+                                          $("#answerRow").append($("<div>",{class:"card mb-4 p-4 text-dark" ,id:"answer"}));
+                                          $("#answer").append($("<h2>",{class:"card-title", text:"Here are the results"}));
+                                          $("#answer").append(
+                                            $("<table>",{class:"table-dark",style:"text-align:left;", id:"ansTable"}));
+                                          for(var a = 0; a < response.casResults.length; a++){
+                                              for(var key in response.casResults[a]){
+                                                $("#ansTable").append($("<tr>").append(($("<td>",{text:key}))).append($("<td>",{text:response.casResults[a][key]})));
+                                              };
+                                          };
+
+
+                                                      
                                               }).error(function(err){ console.log("Error");
                                                                       console.log(err);
                                                                     });
       };
   
   
-// Event handler - call api when submit button is pressed
 
-      $("#modelSubmit").click(function(){
+  $(".nav-link").click(function(){
+      $("#answerRow").empty();
+      $(".nav-link").attr({class:"nav-link"});
+      $(this).attr({class:"nav-link active"});
+      console.log($(this).text().substr(0,$(this).text().indexOf(' '))+".html");
+      $("#targetRow").load($(this).text().substr(0,$(this).text().indexOf(' '))+".html");
 
-        
-              // Preventing the buttons default behavior when clicked (which is submitting a form)
-      
-              event.preventDefault();
+
+  });
 
 
-              // makeCall("SSRACDECISION"+"/steps/execute",requestJSON);
-                console.log($("#phyDays").val());
-              requestJSON['scenario']['SDOH_Physically_Unhealthy_Days_'] = $("#phyDays").val()*1; 
-              requestJSON['scenario']['SDOH_Per_Adults_Bachelors'] = $("#perBach").val()*1; 
-              requestJSON['scenario']['SDOH_Unemployment_Rate'] = $("#unEmpRate").val()*1;
-              requestJSON['scenario']['SDOH_Median_Household_Income'] = $("#medHHIncome").val()*1;
-              
-
-              //6 calls to 6 models are made now - this can be changed to just one (the most relevant model) once done.
-              console.log(requestJSON);
-              makeCall("sshldtree"+"/steps/score",requestJSON);
-        
-        });
-  
+$("#scenarios").click(function(){
+  console.log("modal");
+  $("#modelBox").attr({class:"row"});
+});
